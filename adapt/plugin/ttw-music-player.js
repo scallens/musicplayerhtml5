@@ -40,14 +40,14 @@
             albumCover:'.img',
             description:'.description',
             descriptionShowing:'.showing',
-            trackArtist:'.track-artist'
+            trackArtist:'.track-artist' //Add by Samuel
         };
 
         defaultOptions = {
             ratingCallback:null,
             currencySymbol:'$',
             buyText:'BUY',
-            tracksToShow:250,
+            tracksToShow:250,  //Change by Samuel
             autoPlay:false,
             jPlayer:{}
         };
@@ -85,7 +85,7 @@
                             '<span class="separ">-</span>' +
                             '<span class="track-artist"></span>' +
                         '</li>'
-            };
+            };  //Change by Samuel
 
             function init(playlistOptions) {
 
@@ -226,7 +226,7 @@
 
                     $track.find(cssSelector.title).html(trackName(j));
 
-                    $track.find(cssSelector.trackArtist).html(trackArtist(j));
+                    $track.find(cssSelector.trackArtist).html(trackArtist(j)); //Add by Samuel
 
                     $track.find(cssSelector.duration).html(duration(j));
 
@@ -357,7 +357,7 @@
 
         interfaceMgr = function() {
 
-            var $player, $title, $artist, $albumCover, $trackArtist;
+            var $player, $title, $artist, $albumCover, $trackArtist; //Add $trackArtist by Samuel
 
 
             function init() {
@@ -365,7 +365,7 @@
                         $title = $player.find(cssSelector.title),
                         $artist = $player.find(cssSelector.artist),
                         $albumCover = $player.find(cssSelector.albumCover),
-                        $trackArtist = $player.find(cssSelector.trackArtist);
+                        $trackArtist = $player.find(cssSelector.trackArtist); //Add by Samuel
 
                 setDescription();
 
@@ -428,7 +428,7 @@
                         '        <div class="more">View More...</div>' +
                         '    </div>' +
                         '    <div class="jPlayer-container"></div>' +
-                        '</div>';
+                        '</div>'; //Change by Samuel
 
                 $interface = $(markup).css({display:'none', opacity:0}).appendTo($self).slideDown('slow', function() {
                     $interface.animate({opacity:1});
@@ -491,7 +491,7 @@
                 return fileName(myPlaylist[index].mp3);
             else if (!isUndefined(myPlaylist[index].oga))
                 return fileName(myPlaylist[index].oga);
-            else return '';
+            else return ''; //Add by Samuel
         }
 
         function fileName(path) {

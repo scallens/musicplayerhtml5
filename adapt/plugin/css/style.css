@@ -94,6 +94,7 @@ margin-left:0px;
 
 .ttw-music-player span.separ {
 	color: black;
+	padding-right: 20px;
 }
 
 /** Player **/
@@ -184,22 +185,23 @@ margin-left:0px;
     padding: 10px 20px;
     color: black;
     font-size: 12px;
-    max-height: 340px;
+    max-height: 420px;
     overflow: auto;
 }
 
 .ttw-music-player .tracklist ol {
     margin: 0;
     padding: 0;
-    overflow:hidden;
+    max-height: 420px;
+    overflow: auto;
 }
 
 .ttw-music-player .tracklist li {
     background: transparent url(../images/tracklist-item-bg.png) repeat-x bottom left scroll;
     padding: 10px 0 10px 0;
-    list-style-position: inside;
+    list-style-position: inherit;
     position: relative;
-    list-style-type: decimal;
+    list-style-type: none;
 }
 
 .ttw-music-player .tracklist li:hover {
@@ -217,27 +219,27 @@ margin-left:0px;
 
 
 .ttw-music-player .tracklist .title {
-    width: 180px;
+    width: 200px;
     display: inline-block;
-    padding: 0 0 0 14px;
+    padding: 0 0 0 5px;
     cursor: pointer;
     font-style: italic;
 }
 
 .ttw-music-player .tracklist .track-artist {
-    width: 180px;
+    width: 200px;
     display: inline-block;
-    padding: 0 0 0 14px;
+    padding: 0 0 0 5px;
     cursor: pointer;
     font-weight: 600;
 }
 
 .ttw-music-player li:nth-child(1n + 10) .title{
-    padding-left:7px;
+    padding-left:5px;
 }
 
 .ttw-music-player li:nth-child(1n + 10) .track-artist{
-    padding-left:7px;
+    padding-left:5px;
 }
 
 .ttw-music-player li.playing {
