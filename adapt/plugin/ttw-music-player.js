@@ -47,7 +47,7 @@
             ratingCallback:null,
             currencySymbol:'$',
             buyText:'BUY',
-            tracksToShow:5,
+            tracksToShow:250,
             autoPlay:false,
             jPlayer:{}
         };
@@ -82,7 +82,7 @@
             markup = {
                 listItem:'<li class="track">' +
                             '<span class="title"></span>' +
-                            '<span class="separ">--</span>' +
+                            '<span class="separ">-</span>' +
                             '<span class="track-artist"></span>' +
                         '</li>'
             };
@@ -388,9 +388,9 @@
                         '            <span class="highlight"></span>' +
                         '        </div>' +
                         '        <div class="track-info">' +
-                        '            <p class="title"></p>' +
-                        '            <p class="artist-outer">By <span class="artist"></span></p>' +
-                        '            <p class="jp-duration"></p>' +
+                        '            <span class="title"></span>' +
+                        '            <span class="artist-outer">By </span><span class="artist"></span>' +
+                        '            <span class="jp-duration"></span>' +
                         '        </div>' +
                         '        <div class="player-controls">' +
                         '            <div class="main">' +
