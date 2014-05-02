@@ -39,7 +39,8 @@
             artistOuter:'.artist-outer',
             albumCover:'.img',
             description:'.description',
-            descriptionShowing:'.showing'
+            descriptionShowing:'.showing',
+            trackArtist:'.track-artist'
         };
 
         defaultOptions = {
@@ -81,8 +82,8 @@
             markup = {
                 listItem:'<li class="track">' +
                             '<span class="title"></span>' +
-                            '<span class="bid">--</span>' +
-                            '<span class="description"></span>' +
+                            '<span class="separ">--</span>' +
+                            '<span class="track-artist"></span>' +
                         '</li>'
             };
 
@@ -225,6 +226,8 @@
 
                     $track.find(cssSelector.title).html(trackName(j));
 
+                    $track.find(cssSelector.trackArtist).html(trackArtist(j));
+
                     $track.find(cssSelector.duration).html(duration(j));
 
                     setRating('track', $track, j);
@@ -354,14 +357,15 @@
 
         interfaceMgr = function() {
 
-            var $player, $title, $artist, $albumCover;
+            var $player, $title, $artist, $albumCover, $trackArtist;
 
 
             function init() {
                 $player = $(cssSelector.player),
                         $title = $player.find(cssSelector.title),
                         $artist = $player.find(cssSelector.artist),
-                        $albumCover = $player.find(cssSelector.albumCover);
+                        $albumCover = $player.find(cssSelector.albumCover),
+                        $trackArtist = $player.find(cssSelector.trackArtist);
 
                 setDescription();
 
@@ -419,7 +423,6 @@
                         '            </div>' +
                         '        </div>' +
                         '    </div>' +
-                        '    <p class="description"></p>' +
                         '    <div class="tracklist">' +
                         '        <ol class="tracks"> </ol>' +
                         '        <div class="more">View More...</div>' +
@@ -474,6 +477,16 @@
         function trackName(index) {
             if (!isUndefined(myPlaylist[index].title))
                 return myPlaylist[index].title;
+            else if (!isUndefined(myPlaylist[index].mp3))
+                return fileName(myPlaylist[index].mp3);
+            else if (!isUndefined(myPlaylist[index].oga))
+                return fileName(myPlaylist[index].oga);
+            else return '';
+        }
+
+        function trackArtist(index) {
+            if (!isUndefined(myPlaylist[index].artist))
+                return myPlaylist[index].artist;
             else if (!isUndefined(myPlaylist[index].mp3))
                 return fileName(myPlaylist[index].mp3);
             else if (!isUndefined(myPlaylist[index].oga))
